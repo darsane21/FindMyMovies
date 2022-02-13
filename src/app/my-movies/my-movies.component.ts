@@ -7,17 +7,12 @@ import {APIService} from '../api.service'
   styleUrls: ['./my-movies.component.scss']
 })
 export class MyMoviesComponent implements OnInit {
-  data:any;
-  @Input() name: any;
+  @Input() data: any;
 
-  constructor(private api:APIService) {
+  constructor() {
   }
   ngOnInit(): void {
-    console.log("rr");
 
-    this.api.getMovieData(name).subscribe(data=>{
-      this.data=Array(data)
-    })
   }
 
 

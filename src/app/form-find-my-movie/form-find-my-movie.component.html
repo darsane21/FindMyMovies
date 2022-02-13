@@ -25,10 +25,5 @@
         </div>
     </div>
     <div [hidden]="!submitted">
-      <app-my-movies [name]="data"></app-my-movies>
-      <h2>You submitted the following:</h2>
-      <div class="row">
-        <div class="col-xs-3">Name</div>
-        <div class="col-xs-9">{{ data }}</div>
-      </div>
+      <app-my-movies [data]="data"></app-my-movies>
     </div>

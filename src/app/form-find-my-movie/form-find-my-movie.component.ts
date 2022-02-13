@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
+import {APIService} from '../api.service'
 
 @Component({
   selector: 'app-form-find-my-movie',
@@ -10,8 +11,9 @@ export class FormFindMyMovieComponent implements OnInit {
   SignupForm: any;
   data:any;
   submitted = false;
+  name:any;
 
-  constructor() {
+  constructor(private api:APIService) {
   }
 
   ngOnInit() {
@@ -23,7 +25,13 @@ export class FormFindMyMovieComponent implements OnInit {
   }
 
   onSubmit() {
-    this.data=this.SignupForm["controls"]["userData"]["value"]["username"];
+    this.name=this.SignupForm["controls"]["userData"]["value"]["username"];
     this.submitted = true;
+    //console.log(this.name);
+    this.api.getMovieData(this.name).subscribe(datas=>{
+      this.data=Array(datas)
+      //console.log(datas);
+    })
+    //console.log(this.data);
   }
 }
