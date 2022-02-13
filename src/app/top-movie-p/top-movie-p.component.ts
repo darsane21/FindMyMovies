@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {APIService} from '../api.service'
+import { APIService } from '../API.service'
 
 @Component({
   selector: 'app-top-movie-p',
@@ -9,12 +9,12 @@ import {APIService} from '../api.service'
 export class TopMoviePComponent implements OnInit {
 
   @Input() findMyMovies!: any;
-  data:any;
+  data: any;
 
-  constructor(private user:APIService) {
-    this.user.getCustomerData().subscribe(data=>{
+  constructor(private user: APIService) {
+    this.user.getCustomerData().subscribe(data => {
       console.log(data);
-      this.data=Array(data)
+      this.data = Array(data)
     })
   }
   ngOnInit(): void {

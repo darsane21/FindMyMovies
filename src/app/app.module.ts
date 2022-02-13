@@ -14,6 +14,7 @@ import { FormFindMyMovieComponent } from './form-find-my-movie/form-find-my-movi
 import { TopMoviePComponent } from './top-movie-p/top-movie-p.component';
 import { RechercheMoviePComponent } from './recherche-movie-p/recherche-movie-p.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormFindMyMovieAdvancedComponent } from './form-find-my-movie-advanced/form-find-my-movie-advanced.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     MyMoviesComponent,
     FormFindMyMovieComponent,
     TopMoviePComponent,
-    RechercheMoviePComponent
+    RechercheMoviePComponent,
+    FormFindMyMovieAdvancedComponent
   ],
   imports: [
     HttpClientModule,
