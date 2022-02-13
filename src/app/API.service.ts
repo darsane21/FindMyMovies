@@ -10,9 +10,8 @@ export class APIService {
 
   getMovieData(t:any){
     if(t==""){
-      //retourner un lien api qui prends les top 10 movies serial A FAIRE
-      t="car";
-    }
-    return this._obj.get('http://www.omdbapi.com/?apikey=7469e52c&t='+t+'\n')
+      return this._obj.get('https://api.themoviedb.org/3/discover/movie?api_key=e6171b13d4159aa39793cc0b447bbb93&sort_by=popularity.desc');
+    }else
+      return this._obj.get('https://api.themoviedb.org/3/search/movie?api_key=e6171b13d4159aa39793cc0b447bbb93&query='+t);
   }
 }

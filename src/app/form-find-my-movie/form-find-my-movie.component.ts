@@ -30,8 +30,8 @@ export class FormFindMyMovieComponent implements OnInit {
     this.submitted = true;
     this.api.getMovieData(this.name).subscribe(datas=>{
       this.data=Array(datas)
+      this.data=this.data[0]["results"];
     })
-    console.log(this.data);
   }
 
   advancedSearch(){
