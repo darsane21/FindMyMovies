@@ -14,6 +14,7 @@ import { FormFindMyMovieComponent } from './form-find-my-movie/form-find-my-movi
 import { HttpClientModule } from '@angular/common/http';
 import {ReactiveFormsModule} from "@angular/forms";
 import { AllMoviesComponent } from './all-movies/all-movies.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AllMoviesComponent } from './all-movies/all-movies.component';
     MyMoviesComponent,
     FormFindMyMovieComponent,
     AllMoviesComponent,
+    HomeComponent,
   ],
   imports: [
     HttpClientModule,

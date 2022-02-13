@@ -1,11 +1,12 @@
 import { AllMoviesComponent } from '../all-movies/all-movies.component';
 import { FormFindMyMovieComponent } from '../form-find-my-movie/form-find-my-movie.component';
+import { HomeComponent } from '../home/home.component';
 
 export const routes = [
   {
     path: '',
     label: 'Home route',
-    component: AllMoviesComponent,
+    component: HomeComponent,
   },
   {
     path: 'AllMovies',

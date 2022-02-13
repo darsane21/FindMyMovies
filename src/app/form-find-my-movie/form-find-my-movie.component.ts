@@ -11,6 +11,7 @@ export class FormFindMyMovieComponent implements OnInit {
   SignupForm: any;
   data:any;
   submitted = false;
+  submittedAdvanced = false;
   name:any;
 
   constructor(private api:APIService) {
@@ -31,5 +32,12 @@ export class FormFindMyMovieComponent implements OnInit {
       this.data=Array(datas)
     })
     console.log(this.data);
+  }
+
+  advancedSearch(){
+    if(this.submittedAdvanced == false)
+      this.submittedAdvanced = true;
+    else
+      this.submittedAdvanced = false;
   }
 }

@@ -3,6 +3,14 @@
             <div class="flex">
                 <h2 class="pb-4 m-auto">Search My Movie</h2>
             </div>
+
+
+            <div class="flex items-center">
+              <button (click)="advancedSearch()" class="m-auto mt-6 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                Advanced Search
+              </button>
+            </div>
+
           <form [formGroup]="SignupForm" (ngSubmit)="onSubmit()">
 
             <div class="pt-2 relative mx-auto text-gray-600">
@@ -23,9 +31,7 @@
                   </div>
 
 
-
-
-
+          <div [hidden]="!submittedAdvanced">
             <div class="relative z-0 mb-6 w-full group">
               <input type="email" name="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
               <label for="floating_email" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Movie Name</label>
@@ -60,6 +66,7 @@
                 <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
                 <label for="floating_phone" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Year (ex: 2000)</label>
               </div>
+            </div>
             </div>
 
 
