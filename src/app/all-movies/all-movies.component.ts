@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {APIService} from '../api.service'
+import { APIService } from '../API.service'
 
 @Component({
   selector: 'app-all-movies',
@@ -7,13 +7,13 @@ import {APIService} from '../api.service'
   styleUrls: ['./all-movies.component.scss']
 })
 export class AllMoviesComponent implements OnInit {
-  data:any;
+  data: any;
 
-  constructor(private api:APIService) {
-    this.api.getMovieData("").subscribe(datas=>{
-      this.data=Array(datas)
+  constructor(private api: APIService) {
+    this.api.getMovieData("").subscribe(datas => {
+      this.data = Array(datas)
       console.log(this.data.valueOf());
-      this.data=this.data[0]["results"];
+      this.data = this.data[0]["results"];
       //console.log(this.data.valueOf());
       //console.log(this.data[0]["results"]);
     })

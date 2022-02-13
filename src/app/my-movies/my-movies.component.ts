@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {APIService} from '../api.service'
+import { APIService } from '../API.service'
 
 @Component({
   selector: 'app-my-movies',
