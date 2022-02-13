@@ -10,12 +10,9 @@ export class AllMoviesComponent implements OnInit {
   data:any;
 
   constructor(private api:APIService) {
-    this.api.getMovieData("").subscribe(datas=>{
+    this.api.getMovieData("popularity","","").subscribe(datas=>{
       this.data=Array(datas)
-      console.log(this.data.valueOf());
       this.data=this.data[0]["results"];
-      //console.log(this.data.valueOf());
-      //console.log(this.data[0]["results"]);
     })
   }
   ngOnInit(): void {
