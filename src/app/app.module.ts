@@ -13,6 +13,7 @@ import { MyMoviesComponent } from './my-movies/my-movies.component';
 import { FormFindMyMovieComponent } from './form-find-my-movie/form-find-my-movie.component';
 import { HttpClientModule } from '@angular/common/http';
 import {ReactiveFormsModule} from "@angular/forms";
+import { AllMoviesComponent } from './all-movies/all-movies.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     FooterComponent,
     MyMoviesComponent,
     FormFindMyMovieComponent,
+    AllMoviesComponent,
   ],
   imports: [
     HttpClientModule,

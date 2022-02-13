@@ -12,7 +12,6 @@ export class APIService {
     if(t==""){
       //retourner un lien api qui prends les top 10 movies serial A FAIRE
       t="car";
-      console.log("t est nul")
     }
     return this._obj.get('http://www.omdbapi.com/?apikey=7469e52c&t='+t+'\n')
   }

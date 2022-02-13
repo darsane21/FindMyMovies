@@ -27,11 +27,8 @@ export class FormFindMyMovieComponent implements OnInit {
   onSubmit() {
     this.name=this.SignupForm["controls"]["userData"]["value"]["username"];
     this.submitted = true;
-    //console.log(this.name);
     this.api.getMovieData(this.name).subscribe(datas=>{
       this.data=Array(datas)
-      //console.log(datas);
     })
-    //console.log(this.data);
   }
 }
