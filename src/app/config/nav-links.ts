@@ -3,6 +3,11 @@ import { FormFindMyMovieComponent } from '../form-find-my-movie/form-find-my-mov
 
 export const routes = [
   {
+    path: '',
+    label: 'Home route',
+    component: AllMoviesComponent,
+  },
+  {
     path: 'AllMovies',
     label: 'AllMovies route',
     component: AllMoviesComponent,
