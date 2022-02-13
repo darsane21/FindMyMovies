@@ -30,5 +30,6 @@ export class FormFindMyMovieComponent implements OnInit {
     this.api.getMovieData(this.name).subscribe(datas=>{
       this.data=Array(datas)
     })
+    console.log(this.data);
   }
 }
