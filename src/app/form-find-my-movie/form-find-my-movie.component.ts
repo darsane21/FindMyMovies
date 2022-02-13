@@ -34,10 +34,4 @@ export class FormFindMyMovieComponent implements OnInit {
     })
   }
 
-  advancedSearch() {
-    if (this.submittedAdvanced == false)
-      this.submittedAdvanced = true;
-    else
-      this.submittedAdvanced = false;
-  }
 }
