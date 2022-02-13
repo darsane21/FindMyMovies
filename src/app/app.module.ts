@@ -13,6 +13,7 @@ import { MyMoviesComponent } from './my-movies/my-movies.component';
 import { FormFindMyMovieComponent } from './form-find-my-movie/form-find-my-movie.component';
 import { TopMoviePComponent } from './top-movie-p/top-movie-p.component';
 import { RechercheMoviePComponent } from './recherche-movie-p/recherche-movie-p.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { RechercheMoviePComponent } from './recherche-movie-p/recherche-movie-p.
     RechercheMoviePComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

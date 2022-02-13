@@ -3,10 +3,6 @@ import { RechercheMoviePComponent } from '../recherche-movie-p/recherche-movie-p
 
 export const routes = [
   {
-    path: '',
-    label: 'TopMovie route',
-    component: TopMoviePComponent,
-  },{
     path: 'TopMovie',
     label: 'TopMovie route',
     component: TopMoviePComponent,

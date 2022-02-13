@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {APIService} from '../api.service'
 
 @Component({
   selector: 'app-top-movie-p',
@@ -7,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopMoviePComponent implements OnInit {
 
-  constructor() { }
+  @Input() findMyMovies!: any;
+  data:any;
 
+  constructor(private user:APIService) {
+    this.user.getCustomerData().subscribe(data=>{
+      console.log(data);
+      this.data=Array(data)
+    })
+  }
   ngOnInit(): void {
   }
 
