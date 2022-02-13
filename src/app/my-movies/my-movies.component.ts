@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {APIService} from '../api.service'
 
 @Component({
   selector: 'app-my-movies',
@@ -6,11 +7,18 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./my-movies.component.scss']
 })
 export class MyMoviesComponent implements OnInit {
-  @Input() movie: any;
+  data:any;
+  @Input() name: any;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private api:APIService) {
   }
+  ngOnInit(): void {
+    console.log("rr");
+
+    this.api.getMovieData(name).subscribe(data=>{
+      this.data=Array(data)
+    })
+  }
+
 
 }
