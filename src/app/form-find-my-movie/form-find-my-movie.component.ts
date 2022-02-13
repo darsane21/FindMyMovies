@@ -33,5 +33,4 @@ export class FormFindMyMovieComponent implements OnInit {
       this.data = this.data[0]["results"];
     })
   }
-
 }
