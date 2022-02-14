@@ -18,6 +18,8 @@ import { AllMoviesComponent } from './all-movies/all-movies.component';
 import { HomeComponent } from './home/home.component';
 import { FormFindMyMovieAdvencedComponent } from './form-find-my-movie-advenced/form-find-my-movie-advenced.component';
 import { SearchMyMovieComponent } from './search-my-movie/search-my-movie.component';
+import { ModalComponent } from './modal/modal.component';
+import { ModalService } from './modal/modal.service';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { SearchMyMovieComponent } from './search-my-movie/search-my-movie.compon
     HomeComponent,
     FormFindMyMovieAdvencedComponent,
     SearchMyMovieComponent,
+    ModalComponent,
   ],
   imports: [
     HttpClientModule,
@@ -40,7 +43,7 @@ import { SearchMyMovieComponent } from './search-my-movie/search-my-movie.compon
     MatIconModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

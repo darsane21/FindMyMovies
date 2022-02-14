@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, ViewContainerRef} from '@angular/core';
 import { APIService } from '../API.service'
+import { ModalService } from '../modal/modal.service';
 
 @Component({
   selector: 'app-my-movies',
@@ -9,11 +10,18 @@ import { APIService } from '../API.service'
 export class MyMoviesComponent implements OnInit {
   @Input() data: any;
 
-  constructor() {
-  }
+
+  constructor(
+    private modalService: ModalService,
+    private viewContainerRef: ViewContainerRef
+  ) {}
   ngOnInit(): void {
 
   }
-
+  openModal(e:any, modalTitle:any, modalText:any) {
+    e.preventDefault();
+    this.modalService.setRootViewContainerRef(this.viewContainerRef);
+    this.modalService.addDynamicComponent(modalTitle, modalText);
+  }
 
 }
