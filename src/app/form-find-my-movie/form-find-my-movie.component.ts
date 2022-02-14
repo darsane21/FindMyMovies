@@ -11,7 +11,6 @@ export class FormFindMyMovieComponent implements OnInit {
   SignupForm: any;
   data: any;
   submitted = false;
-  submittedAdvanced = false;
   name: any;
 
   constructor(private api: APIService) {
@@ -28,7 +27,7 @@ export class FormFindMyMovieComponent implements OnInit {
   onSubmit() {
     this.name = this.SignupForm["controls"]["userData"]["value"]["username"];
     this.submitted = true;
-    this.api.getMovieData(this.name).subscribe(datas => {
+    this.api.getMovieData('https://api.themoviedb.org/3/search/movie?api_key=e6171b13d4159aa39793cc0b447bbb93&query=' + this.name).subscribe(datas => {
       this.data = Array(datas)
       this.data = this.data[0]["results"];
     })
