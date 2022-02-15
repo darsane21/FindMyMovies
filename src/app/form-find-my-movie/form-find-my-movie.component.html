@@ -1,10 +1,10 @@
     <div class="flex items-center mb-5">
         <div class="m-auto">
-          <form [formGroup]="SignupForm" (ngSubmit)="onSubmit()">
+          <form [formGroup]="SignupForm" (ngSubmit)="onSubmit()" ngNativeValidate>
             <div class="pt-2 relative mx-auto text-gray-600">
               <div formGroupName="userData">
                 <input class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
-                        type="search" name="search" placeholder="movie name" id="username" formControlName = "username">
+                        type="search" name="search" placeholder="movie name" id="username" formControlName = "username" required>
               </div>
 
               <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
@@ -21,5 +21,5 @@
         </div>
     </div>
     <div [hidden]="!submitted">
-      <app-my-movies [data]="data"></app-my-movies>
+      <app-my-movies class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1" [data]="data"></app-my-movies>
     </div>

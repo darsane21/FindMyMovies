@@ -1,35 +1,39 @@
 <div class="w-full max-w-xs m-auto">
-    <form [formGroup]="SignupForm" (ngSubmit)="onSubmit()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <form [formGroup]="SignupForm" (ngSubmit)="onSubmit()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"ngNativeValidate>
+      <div formGroupName="userData">
         <div class="relative z-0 mb-6 w-full group">
-          <div formGroupName="userData">
-            <input class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none" type="search" name="search" placeholder="movie name" id="username" formControlName = "username">
-          </div>
+            <label for="username" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Title</label>
+            <input class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none" type="search" name="search" placeholder="Spider man" id="username" formControlName = "username" required>
         </div>
 
         <div class="grid xl:grid-cols-2 xl:gap-6 flex justify-center">
-            <div class="mb-3 xl:w-64">
-                <select id="selectType" class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example" required>
-                    <option selected>Chose the type</option>
-                    <option value="1">Movie</option>
-                    <option value="2">Serie</option>
+          <div class="mb-3 xl:w-64">
+                <select formControlName = "language" id="selectType" name="selectType" class="form-select appearance-none block px-5 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example" >
+                    <option value="es">Espagnol</option>
+                    <option value="fr">French</option>
+                    <option value="en" selected="selected">English</option>
+                    <option value="it">Italien</option>
                 </select>
             </div>
         </div>
         <div class="grid xl:grid-cols-2 xl:gap-6">
-          <div class="relative z-0 mb-6 w-full group">
-            <div formGroupName="year">
-              <input formControlName = "yearNumber" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-              <label for="floating_phone" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Year (ex: 2000)</label>
-            </div>
+          <div class="relative z-0 mb-6 w-full group mt-3">
+              <input formControlName = "yearNumber" type="tel" name="floating_phone" id="floating_phone" class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none" placeholder="2018"  />
+              <label for="floating_phone" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Year</label>
           </div>
         </div>
         <div class="flex items-center">
           <button type="submit" class="m-auto text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
         </div>
+        </div>
     </form>
   </div>
 
 <div [hidden]="!submitted">
-  <app-my-movies [data]="data"></app-my-movies>
+  <app-my-movies class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1"  [data]="data"></app-my-movies>
+</div>
+
+<div [hidden]="!novalues">
+  Sorry, we didn't find any movie like this...
 </div>
 
