@@ -18,6 +18,7 @@ export class AllMoviesComponent implements OnInit {
       console.log(this.data);
     })
   }
+
   ngOnInit(): void {
 
   }
