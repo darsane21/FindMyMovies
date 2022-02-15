@@ -12,6 +12,7 @@ export class FormFindMyMovieComponent implements OnInit {
   data: any;
   submitted = false;
   name: any;
+  novalues = false;
 
   constructor(private api: APIService) {
   }
@@ -25,13 +26,18 @@ export class FormFindMyMovieComponent implements OnInit {
   }
 
   onSubmit() {
+    this.novalues = false;
     const btn = document.getElementById("main") as HTMLInputElement;
     btn.classList.toggle("h-auto");
     this.name = this.SignupForm["controls"]["userData"]["value"]["username"];
     this.submitted = true;
+    this.novalues = false;
+
     this.api.getMovieData('https://api.themoviedb.org/3/search/movie?api_key=e6171b13d4159aa39793cc0b447bbb93&query=' + this.name).subscribe(datas => {
       this.data = Array(datas)
       this.data = this.data[0]["results"];
+      if(this.data.length==0)
+        this.novalues = true;
     })
   }
 }

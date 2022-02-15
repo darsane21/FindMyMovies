@@ -27,13 +27,14 @@
         </div>
         </div>
     </form>
+    <div [hidden]="!novalues">
+      <h2 class="center pb-4 m-auto text-gray-400 ml-3"> Sorry, This movie doesn't exist...</h2>
+    </div>
   </div>
 
 <div [hidden]="!submitted">
   <app-my-movies class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1"  [data]="data"></app-my-movies>
 </div>
 
-<div [hidden]="!novalues">
-  Sorry, we didn't find any movie like this...
-</div>
+
 
