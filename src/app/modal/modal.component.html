@@ -2,8 +2,25 @@
 <div class="modal">
   <div class="modal-overlay" (click)="close($event)"></div>
   <div class="modal--modal-content">
-    <h2 [innerHTML]="modalTitle"></h2>
-    <div [innerHTML]="modalText"></div>
+    <div class="flex mb-3">
+      <img class="fit-picture h-72 w-66 m-auto" src="http://image.tmdb.org/t/p/w500/" alt="picture of movie">
+    </div>
+    <h2 [innerHTML]="modalTitle.title"></h2>
+    <div [innerHTML]="modalTitle.overview"></div>
+    <h2>Langue originale :</h2>
+    <div [innerHTML]="modalTitle.popularity"></div>
+
+    <h2>Langue originale :</h2>
+    <div [innerHTML]="modalTitle.release_date"></div>
+
+    <h2>Langue originale :</h2>
+    <div [innerHTML]="modalTitle.video_count"></div>
+
+    <h2>Langue originale :</h2>
+    <div [innerHTML]="modalTitle.vote_average"></div>
+
+    <h2>Langue originale :</h2>
+    <div [innerHTML]="modalTitle.original_language"></div>
     <a class="modal--close-btn" (click)="close($event)">X</a>
   </div>
 </div>

@@ -15,12 +15,11 @@ export class ModalService {
   setRootViewContainerRef(viewContainerRef:any) {
     this.rootViewContainer = viewContainerRef;
   }
-  addDynamicComponent(modalTitle: string, modalText: string) {
+  addDynamicComponent(modalTitle: string) {
     const factory =
       this.factoryResolver.resolveComponentFactory(ModalComponent);
     const component = factory.create(this.rootViewContainer.parentInjector);
     component.instance.modalTitle = modalTitle;
-    component.instance.modalText = modalText;
     // Subscribe to the closeModal event and destroy the component
     component.instance.closeModal.subscribe(() =>
       this.removeDynamicComponent(component)

@@ -18,10 +18,10 @@ export class MyMoviesComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  openModal(e:any, modalTitle:any, modalText:any) {
+  openModal(e:any, modalTitle:any) {
     e.preventDefault();
     this.modalService.setRootViewContainerRef(this.viewContainerRef);
-    this.modalService.addDynamicComponent(modalTitle, modalText);
+    this.modalService.addDynamicComponent(modalTitle);
   }
 
 }
