@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { APIService } from "../API.service";
 import { FormControl, FormGroup } from "@angular/forms";
+// @ts-ignore
+import * as credential from '../credentials.json';
 
 @Component({
   selector: 'app-form-find-my-movie-advenced',
@@ -40,7 +42,7 @@ export class FormFindMyMovieAdvencedComponent implements OnInit {
 
     this.submitted = true;
     this.novalues = false;
-    this.link='https://api.tmdb.org/3/search/movie?api_key=e6171b13d4159aa39793cc0b447bbb93&query='+this.name+'&year='+this.year+'&language='+this.language
+    this.link='https://api.tmdb.org/3/search/movie?api_key='+credential.default.APIKeys+'&query='+this.name+'&year='+this.year+'&language='+this.language
 
     this.api.getMovieData(this.link).subscribe(datas => {
     this.data = Array(datas)
