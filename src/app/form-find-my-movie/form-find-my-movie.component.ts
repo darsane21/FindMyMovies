@@ -25,6 +25,8 @@ export class FormFindMyMovieComponent implements OnInit {
   }
 
   onSubmit() {
+    const btn = document.getElementById("main") as HTMLInputElement;
+    btn.classList.toggle("h-auto");
     this.name = this.SignupForm["controls"]["userData"]["value"]["username"];
     this.submitted = true;
     this.api.getMovieData('https://api.themoviedb.org/3/search/movie?api_key=e6171b13d4159aa39793cc0b447bbb93&query=' + this.name).subscribe(datas => {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {APIService} from "../API.service";
-import {FormControl, FormGroup} from "@angular/forms";
+import { APIService } from "../API.service";
+import { FormControl, FormGroup } from "@angular/forms";
 
 @Component({
   selector: 'app-form-find-my-movie-advenced',
@@ -13,7 +13,7 @@ export class FormFindMyMovieAdvencedComponent implements OnInit {
   data: any;
   submitted = false;
   name: any;
-  year:any;
+  year: any;
 
   constructor(private api: APIService) {
   }
@@ -30,6 +30,8 @@ export class FormFindMyMovieAdvencedComponent implements OnInit {
   }
 
   onSubmit() {
+    const btn = document.getElementById("main") as HTMLInputElement;
+    btn.classList.toggle("h-auto");
     this.year = this.SignupForm["controls"]["year"]["value"]["yearNumber"];
     this.name = this.SignupForm["controls"]["userData"]["value"]["username"];
     this.submitted = true;
